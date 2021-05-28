@@ -1,0 +1,36 @@
+# definitions fro restaurants 
+type Restaurant {
+    id: ID!
+    name: String!
+    adress: String!
+    cep: String!
+    food: FoodType!
+}
+
+# definitions for restaurant type 
+type FoodType {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    restaurants: [Restaurant!]! 
+    restaurant(id: ID!): Restaurant
+}
+
+type Mutation {
+    createRestaurant(name: String!, adress:String!, cep:String!, food: String!): Restaurant
+    deleteRestaurant(id: ID!): Restaurant
+}
+
+
+
+type Query {
+    foodTypes: [FoodType!]!
+    foodType(id: ID!): FoodType
+}
+
+type Mutation {
+    createFoodType(name: String!): FoodType
+    deleteFoodType(id: ID!): FoodType
+}
