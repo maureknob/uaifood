@@ -4,33 +4,39 @@ type Restaurant {
     name: String!
     adress: String!
     cep: String!
-    food: FoodType!
+    menu: [Menu]
 }
 
 # definitions for restaurant type 
-type FoodType {
+type Menu {
     id: ID!
     name: String!
+    description: String!
+    price: Float!
+}
+
+input MenuInput {
+    restaurantId: String!
+    name: String!
+    description: String!
+    price: Float!
+}
+
+input RestaurantInput {
+    name: String!
+    adress: String!
+    cep: String!
+    menu: [MenuInput]
 }
 
 type Query {
     restaurants: [Restaurant!]! 
     restaurant(id: ID!): Restaurant
+    menus: [Menu!]!
 }
 
 type Mutation {
-    createRestaurant(name: String!, adress:String!, cep:String!, food: String!): Restaurant
+    createRestaurant(RestaurantInput: RestaurantInput!): Restaurant
+    createMenu(MenuInput: MenuInput): Restaurant
     deleteRestaurant(id: ID!): Restaurant
-}
-
-
-
-type Query {
-    foodTypes: [FoodType!]!
-    foodType(id: ID!): FoodType
-}
-
-type Mutation {
-    createFoodType(name: String!): FoodType
-    deleteFoodType(id: ID!): FoodType
 }

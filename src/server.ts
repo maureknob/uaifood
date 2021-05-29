@@ -1,7 +1,6 @@
 const { GraphQLServer } = require('graphql-yoga');
 const path = require('path');
-const restaurantResolver = require('./UseCases/Restaurant/RestaurantResolver');
-const FoodTypeResover = require('./UseCases/FoodType/FoodTypeResolver');
+const resolvers = require('./restaurant/RestaurantResolver');
 var mongoose = require("mongoose");
 
 mongoose.connect("mongodb+srv://root:events@cluster0.vxsc5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
@@ -9,10 +8,6 @@ mongoose.connect("mongodb+srv://root:events@cluster0.vxsc5.mongodb.net/myFirstDa
     useUnifiedTopology: true
 });
 
-const resolvers = [
-    restaurantResolver,
-    FoodTypeResover
-]
 
 const server = new GraphQLServer({
     typeDefs: path.resolve(__dirname, 'schema.graphql'),
