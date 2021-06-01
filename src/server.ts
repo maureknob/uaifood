@@ -3,7 +3,7 @@ const path = require('path');
 const resolvers = require('./restaurant/RestaurantResolver');
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://root:events@cluster0.vxsc5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+mongoose.connect("", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
