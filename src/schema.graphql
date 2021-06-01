@@ -4,6 +4,7 @@ type Restaurant {
     name: String!
     adress: String!
     cep: String!
+    culinary: String!
     menu: [Menu]
 }
 
@@ -26,13 +27,14 @@ input RestaurantInput {
     name: String!
     adress: String!
     cep: String!
+    culinary: String!
     menu: [MenuInput]
 }
 
 type Query {
     restaurants: [Restaurant!]! 
     restaurant(id: ID!): Restaurant
-    menus: [Menu!]!
+    restaurantAdress(adress: String!): [Restaurant!]!
 }
 
 type Mutation {

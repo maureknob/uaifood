@@ -12,6 +12,7 @@ var RestaurantSchema = new Schema({
     name: String,
     adress: String,
     cep: String,
+    culinary: String,
     menu: [MenuSchema]
 });
 
