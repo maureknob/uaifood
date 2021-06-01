@@ -6,14 +6,13 @@ Esta api é desenvolvida em Node.js, utilizando um banco de dados não relaciona
 
 ## 1 Começando
 
-### Construção
-No diretório raiz deste projeto execute os comandos:
+### Instalando as dependências
+No diretório raiz deste projeto execute o comando:
 
-- node install
+- node install ou yarn install
 
-- node start
 
-### Conexão
+### Conectando com o banco de dados
 Este projeto utiliza a framework mongoose para operar o banco de dados.
 
 - insira as credenciais do seu MongoDB no arquivo `src/server.ts`
@@ -22,6 +21,11 @@ Este projeto utiliza a framework mongoose para operar o banco de dados.
     useNewUrlParser: true,
     useUnifiedTopology: true
     });
+    
+### Inicializando a aplicação
+No diretório raiz deste projeto execute o comando:
+
+- node start ou yarn start
     
 ## 2 Acessando a api
 O servidor é inicializado através do script `"start"` e aponta diretamente para o arquivo `src/server.ts`.
